@@ -1,0 +1,895 @@
+/* =========== general style ========== */
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Days One", sans-serif; */
+  font-family: "Chakra Petch", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-transform: capitalize;
+}
+:root {
+  --main-color: #cbfe1c;
+  --main-hover-color: #a5ce18;
+  --second-color: #1e2939;
+  --third-color: #0d131d;
+  --fourth-color: #99a1af;
+  --fifth-color: #0b0e13;
+  --six-color: #1a1a1a;
+  --siven-color: #0e131d;
+  --text-color: #8e96a3;
+}
+::selection {
+  background-color: var(--main-color);
+  color: var(--fifth-color);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+div img {
+  width: 100%;
+}
+.container {
+  width: 65%;
+}
+.w-95 {
+  width: 95%;
+}
+.container {
+  width: 90% !important;
+}
+.input-bg-color {
+  background-color: #364153;
+}
+.input-border {
+  border: 1px solid var(--text-color);
+}
+.main-color {
+  color: var(--main-color);
+}
+.main-bg-color {
+  background-color: var(--main-color);
+}
+/* ===========  general style ============== */
+/*============== strat navebar ================*/
+.my-navbar {
+  background-color: var(--fifth-color);
+  border-bottom: 1px solid #1e2939;
+}
+.nave-icon {
+  font-weight: 550;
+}
+.navbar .nav-item a,
+.nav-link,
+.fa-bell,
+.fa-message,
+.fa-list-ul {
+  color: white;
+}
+.fa-message,
+.fa-bell,
+.nave-icon {
+  font-size: 20px;
+}
+.fa-message,
+.fa-bell:hover {
+  cursor: pointer;
+}
+.navbar .navbar-brand,
+.navbar .navbar-nav .active {
+  color: var(--main-color);
+}
+.navbar .nav-item a:hover,
+.fa-bell:hover,
+.fa-message:hover,
+.navbar-toggler i:hover {
+  color: var(--main-hover-color);
+}
+.my-btn {
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+.my-btn::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: all 1s;
+  background-image: linear-gradient(
+    to right,
+    transparent 20%,
+    white,
+    transparent 80%
+  );
+  border-radius: 10px;
+  opacity: 0;
+}
+.my-btn:hover:after {
+  left: 100%;
+  opacity: 1;
+  transition: all 1s;
+}
+.btn:hover {
+  background-color: var(--main-hover-color);
+  border-color: none;
+}
+body:has(#our-games:target) a[href="#our-games"],
+body:has(#what-we-do:target) a[href="#what-we-do"],
+body:has(#our-team:target) a[href="#our-team"],
+body:has(#contact-us:target) a[href="#contact-us"] {
+  color: var(--main-hover-color);
+}
+@media screen and (max-width: 992px) {
+  .icons {
+    display: none;
+  }
+}
+/*=========== end navebar ===============*/
+/* =========== strat header ===============*/
+header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(18, 18, 18, 0.9)),
+    url(https://game-arena-theta.vercel.app/assets/hero-bg-H6PoyNYD.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.header-text,
+.header-img {
+  margin-top: 50px;
+}
+.header-img {
+  padding: 0;
+  border: 5px solid var(--main-color);
+  height: 450px;
+}
+.header-main-img {
+  transform: scaleY(1.5);
+  height: 440px;
+}
+.header-contaent-img {
+  overflow: hidden;
+}
+.header-text p {
+  font-size: 16px;
+  line-height: 26px;
+}
+header .header-text h1,
+header .header-text h1 span {
+  font-family: "Days One", sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+}
+.header-btn1,
+.header-btn2 {
+  font-size: 16px;
+  font-weight: 800;
+}
+.header-btn1:hover,
+.header-btn2:hover {
+  background-color: var(--main-hover-color);
+  color: black;
+}
+.header-btn1 {
+  position: relative;
+  overflow: hidden;
+}
+.header-btn1::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-image: linear-gradient(
+    to right,
+    transparent 30%,
+    white,
+    transparent 80%
+  );
+  border-radius: 10px;
+  transition: all 0.8s;
+  opacity: 0;
+}
+.header-btn1:hover::after {
+  left: 100%;
+  opacity: 1;
+  transition: all 0.8s;
+}
+
+.header-btn2 {
+  border: 2px solid var(--main-color);
+  position: relative;
+  overflow: hidden;
+}
+.header-btn2::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -50%;
+  background-image: linear-gradient(
+    to right,
+    transparent 30%,
+    white,
+    transparent 70%
+  );
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.header-btn2:hover::after {
+  left: 100%;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.winner {
+  width: 160px;
+  bottom: -50px;
+  left: -40px;
+  background-color: var(--fifth-color);
+  border: 1px solid var(--fourth-color);
+}
+.winner p,
+h4 {
+  margin: 0;
+}
+.fa-trophy {
+  font-size: 22px;
+}
+.winner p {
+  font-size: 12px;
+  color: var(--fourth-color);
+}
+/*  =================== end-header =============== */
+/*================ strat main  ==================*/
+main {
+  background-color: var(--third-color);
+  min-height: 100vh;
+  padding-block: 100px 50px;
+}
+.slide-iamges img {
+  border-radius: 15px;
+}
+main .main-text h2 {
+  font-size: 45px;
+  font-weight: 800;
+  font-family: "Days One", sans-serif;
+}
+main .main-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  position: relative;
+}
+.carousel-hide1,
+.carousel-hide2 {
+  background-color: #323232d1;
+  padding: 5px 8px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+.img-slide1 {
+  position: relative;
+}
+.disapper {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: -100;
+  left: -100;
+  z-index: 8;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.img-slide1:hover .disapper {
+  opacity: 1;
+}
+.appear {
+  position: relative;
+}
+.appear::after {
+  content: "";
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(transparent, #c9fe1cba);
+  opacity: 0;
+}
+.appear:hover::after {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.appear:hover {
+  border: 2px solid var(--main-color);
+  border-radius: 15px;
+}
+
+.carsoul-p-style {
+  font-size: 18px;
+  font-weight: 700;
+}
+main .container .carousel-control-prev,
+main .container .carousel-control-next {
+  width: 60px;
+  height: 60px;
+  background-color: var(--fifth-color);
+  border-radius: 50%;
+  border: 1px solid gray;
+  font-size: 25px;
+  margin-left: 15px;
+}
+main .carousel-control-prev:hover,
+main .carousel-control-next:hover {
+  color: var(--main-hover-color);
+  border-color: var(--main-color);
+}
+main .container .slide-btn3 {
+  width: fit-content;
+  height: 40px;
+  border: 2px solid var(--main-color);
+  background-color: var(--third-color);
+  padding: 30px 20px;
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+main .container .slide-btn3:hover {
+  background-color: var(--main-hover-color);
+  color: black;
+}
+@media screen and (max-width: 765px) {
+  .img-slide-sm-none {
+    display: none;
+  }
+}
+main h4::after,
+.our-team h4::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    var(--main-color) 60%,
+    transparent
+  );
+}
+
+main h4::before,
+.our-team h4::before {
+  content: "";
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  right: 55%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--main-color) 60%
+  );
+}
+.what-we-do h4::after,
+.contact-us h4::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 56%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    var(--main-color) 60%,
+    transparent
+  );
+}
+.what-we-do h4::before,
+.contact-us h4::before {
+  content: "";
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  right: 56%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--main-color) 60%
+  );
+}
+/* ================= end main  ==================== */
+/* ================ start what we do  ===========  */
+
+.what-we-do {
+  background-color: var(--third-color);
+  padding-block: 100px;
+}
+.what-we-do .main-text h3 {
+  font-size: 38px;
+  font-weight: 700;
+}
+.what-we-do .row .inner {
+  padding: 25px;
+  border-radius: 15px;
+  background-color: var(--six-color);
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.what-we-do .row .inner::after {
+  content: "";
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  background-image: linear-gradient(
+    140deg,
+    var(--main-color) 50%,
+    transparent 50%
+  );
+  opacity: 0;
+  overflow: hidden;
+}
+.what-we-do .row .inner:hover::after {
+  top: 10%;
+  left: 10%;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.what-we-do .row .inner::before {
+  content: "";
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  background-image: linear-gradient(
+    320deg,
+    var(--main-color) 50%,
+    transparent 50%
+  );
+  opacity: 0;
+  overflow: hidden;
+}
+.what-we-do .row .inner:hover::before {
+  bottom: 10%;
+  right: 10%;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.what-we-do .row .card-img img {
+  border-radius: 15px;
+}
+.what-we-do .row .inner .what-we-do-icon {
+  font-size: 25px;
+  padding: 10px;
+}
+.what-we-do .row .inner,
+.what-we-do .row .card-img img {
+  height: 290px;
+  border: 1px solid var(--second-color);
+}
+.what-we-do-icon,
+h3 {
+  margin-top: 20px;
+}
+.what-we-do .row .inner .what-we-do-icon i {
+  width: 60px;
+  background-color: var(--second-color);
+  padding: 15px;
+  border-radius: 10px;
+}
+.what-we-do .inner:hover .what-we-do-icon i {
+  background-color: var(--main-color);
+  color: var(--fifth-color);
+}
+.what-we-do .row .inner:hover {
+  border: 2px solid var(--main-color);
+}
+/* @media screen and(max-width:500px) {
+  .vsm-size {
+    width: 50%;
+  }
+} */
+/* ========== end what we do  ================*/
+
+/* ============ start our-team  =============*/
+.our-team {
+  background-color: #0b0e13;
+}
+.our-team {
+  padding-block: 120px;
+}
+.our-team .row .inner {
+  position: relative;
+}
+.card-our-team {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.card-our-team::after {
+  content: "";
+  width: auto;
+  height: 100%;
+  background-color: #242424ca;
+  backdrop-filter: grayscale() brightness();
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0);
+  transition: transform 1s;
+  border-radius: 15px;
+}
+.card-our-team:hover::after {
+  transform: translateY(-100%);
+}
+.cover {
+  position: absolute;
+  background-color: #242424ca;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  transition: height 0.5s;
+  height: 100%;
+  backdrop-filter: grayscale() brightness();
+}
+.our-team .row .inner:hover .cover {
+  height: 0;
+}
+.cards-section {
+  position: absolute;
+  top: 60%;
+  bottom: 0px;
+  padding-left: 30px;
+  width: 85%;
+}
+.cards-section h3 {
+  margin: 0;
+  font-family: "Days One", sans-serif;
+  font-size: 20px;
+}
+.cards-section span {
+  font-size: 14px;
+}
+.inner:hover .cards-section span,
+.inner:hover .special-text p {
+  color: var(--main-color);
+}
+.cards-section p {
+  color: var(--text-color);
+  font-size: 12px;
+  margin: 0;
+}
+.special-text p {
+  writing-mode: vertical-rl;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+/* ============ end our-team section ============ */
+/* ========== strat contact-us  section ==========*/
+.contact-us .main-text,
+.our-team .main-text,
+.what-we-do .main-text {
+  line-height: 1.8;
+  margin-block: 70px;
+}
+.contact-us .main-text h4,
+.our-team .main-text h4,
+.what-we-do .main-text h4 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.contact-us .main-text h2,
+.our-team .main-text h2,
+.what-we-do .main-text h2 {
+  font-size: 45px;
+  font-weight: 700;
+  font-family: "Days One", sans-serif;
+}
+.contact-us .main-text p,
+.our-team .main-text p {
+  color: var(--text-color);
+  font-size: 18px;
+}
+.contact-us {
+  background-color: var(--siven-color);
+}
+.contact-us .contact-us-left-side .location-dot,
+.contact-us .contact-us-left-side .phone,
+.contact-us .contact-us-left-side .envelope {
+  font-size: 25px;
+  color: var(--fifth-color);
+  flex-shrink: 0;
+}
+.contact-us-left-side h3 {
+  font-weight: 200;
+  font-size: 22px;
+  font-family: "Days One", sans-serif;
+}
+.contact-us-left-side p {
+  color: var(--text-color);
+}
+.contact-us-left-side h3,
+.contact-us-left-side p {
+  margin-left: 15px;
+}
+.contact-us-left {
+  background-color: var(--second-color);
+}
+.Community {
+  background-image: linear-gradient(to right, #c7fd24, #12e072);
+}
+.Community h3,
+.Community p {
+  color: black;
+}
+.Community h3 {
+  font-size: 25px;
+  font-weight: 900;
+}
+.Community ul li {
+  margin-right: 15px;
+}
+.Community ul li i {
+  font-size: 22px;
+}
+.Community ul li span {
+  background-color: #0b0e13;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Community ul li span:hover {
+  cursor: pointer;
+  background-color: var(--six-color);
+}
+.contact-us-right-side {
+  background-color: var(--second-color);
+}
+.contact-us-right-side h2 {
+  font-size: 22px;
+  font-family: "Days One", sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.contact-us-right-side .first-second-lable input {
+  width: 90%;
+  padding: 10px 45px;
+  text-align: start;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+}
+select:focus {
+  color: #12e072;
+  background-color: var(--main-color);
+}
+select:optional {
+  color: white;
+}
+.contact-us-right-side option {
+  color: white;
+}
+.contact-us-right-side .check-box {
+  width: 15px;
+  height: 15px;
+}
+.checkbox-text {
+  color: var(--text-color);
+  font-size: 14px;
+}
+.contact-us-right-side .form-btn {
+  font-size: 30x;
+  font-weight: 800;
+}
+.contact-us-foot span {
+  font-size: 25px;
+  font-weight: 700;
+}
+.form-btn {
+  position: relative;
+  overflow: hidden;
+}
+.form-btn::after {
+  content: "";
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: all 1s;
+  background-image: linear-gradient(
+    to right,
+    transparent 20%,
+    white,
+    transparent 80%
+  );
+  border-radius: 10px;
+}
+.form-btn:hover:after {
+  left: 100%;
+}
+.form-btn:hover {
+  background-color: var(--main-hover-color);
+}
+/*============= end contact-us ===============  */
+/* ============= start footer ================*/
+footer {
+  color: var(--text-color);
+  background-color: var(--fifth-color);
+}
+footer h3,
+footer .main-text ul li a i {
+  font-size: 22px;
+}
+footer .main-text h3 {
+  font-family: "Chakra Petch", sans-serif;
+}
+footer h3 {
+  font-weight: 550;
+  font-family: "Days One", sans-serif;
+}
+footer .main-text ul li a i,
+footer .footer-info span {
+  margin-right: 12px;
+}
+footer .container .row .games-text ul li a,
+footer .main-text ul li a i {
+  color: var(--text-color);
+}
+footer .container .row .games-text ul,
+footer .support-section span,
+footer .tournaments-text p {
+  line-height: 2;
+}
+footer .main-text ul li a i:hover,
+footer .container .row .games-text ul li a:hover,
+footer .tournaments-text p:hover,
+footer .support-section span:hover,
+footer .footer-info span:hover {
+  color: var(--main-hover-color);
+  cursor: pointer;
+}
+footer .tournaments-text p {
+  margin-bottom: 0;
+}
+
+/*============ end footer ================== */
+
+/* =========== animation start ================ */
+/* first try */
+.img-flip {
+  background-color: var(--third-color);
+}
+.img-first-row {
+  animation: images-flipping-first 5s infinite linear;
+}
+@keyframes images-flipping-first {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-1500%);
+  }
+}.line {
+  width: 80%;
+  margin: auto;
+  margin-block: 50px;
+  height: 4px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px var(--main-color);
+  background-image: linear-gradient(
+    to right,
+    transparent 10%,
+    var(--main-color),
+    transparent 90%
+  );
+}
+.img-second-row {
+  animation: images-flipping-second 5s infinite linear;
+}
+@keyframes images-flipping-second {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(1500%);
+  }
+}
+/* second try */
+.animation-section {
+  background-color: var(--fifth-color);
+  padding: 20px;
+}
+.wrapper {
+  width: 95%;
+  margin: auto;
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(150, 146, 146) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  background-image: linear-gradient(
+    360deg,
+    var(--fifth-color) 20%,
+    var(--main-color),
+    transparent 80%
+  );
+}
+.items {
+  margin-block: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  animation: scrollleft 50s infinite linear;
+  animation-delay: -10s;
+}
+@keyframes scrollleft {
+  100% {
+    left: -100%;
+  }
+}
+.cross-items
+{
+  margin-block: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left:-100%;
+animation: scrollright 50s infinite linear;
+margin-top: 150px;
+}
+@keyframes scrollright {
+  100% {
+    left: 100%;
+  }
+}
+/* =========== animation end ================ */
