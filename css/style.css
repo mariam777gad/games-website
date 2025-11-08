@@ -295,8 +295,15 @@ main .main-text h4 {
 .img-slide1:hover .disapper {
   opacity: 1;
 }
+.img-slide1 img{
+  transition: transform 1s;
+}
+.img-slide1:hover img{
+  transform: scale(1.2);
+}
 .appear {
   position: relative;
+    overflow: hidden;
 }
 .appear::after {
   content: "";
@@ -314,7 +321,7 @@ main .main-text h4 {
   transition: opacity 1s;
 }
 .appear:hover {
-  border: 2px solid var(--main-color);
+  border: 3px solid var(--main-color);
   border-radius: 15px;
 }
 
