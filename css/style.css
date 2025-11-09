@@ -260,7 +260,11 @@ main {
 }
 .slide-iamges img {
   border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
 main .main-text h2 {
   font-size: 45px;
   font-weight: 800;
@@ -290,20 +294,34 @@ main .main-text h4 {
   left: -100;
   z-index: 8;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 0.2s ease-in-out;
 }
 .img-slide1:hover .disapper {
   opacity: 1;
 }
-.img-slide1 img{
-  transition: transform 1s;
+.img-slide1 img {
+  transition: transform 1s ease-in-out;
 }
-.img-slide1:hover img{
-  transform: scale(1.2);
+.img-slide1:hover img {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+  border-radius: 15px;
+  border-color: var(--main-color);
 }
 .appear {
+  height: 300px;
   position: relative;
-    overflow: hidden;
+  overflow: hidden;
+  /* [Fix] Applied a fixed border-radius to the element itself
+to prevent abrupt changes on hover 
+*/
+  border-radius: 15px;
+  border: 3px solid transparent;
+  transition: border-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.appear:hover {
+  border-color: var(--main-color);
 }
 .appear::after {
   content: "";
@@ -315,14 +333,10 @@ main .main-text h4 {
   bottom: 0;
   background-image: linear-gradient(transparent, #c9fe1cba);
   opacity: 0;
+  transition: opacity 0.2s ease-in-out; /* [Fix] Move transition declaration to the element itself to ensure smooth hover effect */
 }
 .appear:hover::after {
   opacity: 1;
-  transition: opacity 1s;
-}
-.appear:hover {
-  border: 3px solid var(--main-color);
-  border-radius: 15px;
 }
 
 .carsoul-p-style {
@@ -365,47 +379,24 @@ main .container .slide-btn3:hover {
     display: none;
   }
 }
-main h4::after,
-.our-team h4::after {
-  content: "";
-  width: 70px;
-  height: 2px;
-  position: absolute;
-  top: 50%;
-  left: 55%;
-  transform: translateY(-50%);
-  border-radius: 15px;
-  background-image: linear-gradient(
-    to right,
-    var(--main-color) 60%,
-    transparent
-  );
-}
 
-main h4::before,
-.our-team h4::before {
-  content: "";
-  width: 70px;
-  height: 2px;
-  position: absolute;
-  top: 50%;
-  right: 55%;
-  transform: translateY(-50%);
-  border-radius: 15px;
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    var(--main-color) 60%
-  );
+/* Add the following style to make the line appear on both sides on all screens */
+.what-we-do h4,
+.contact-us h4,
+.our-team h4,
+main h4 {
+  display: inline-block;
 }
 .what-we-do h4::after,
-.contact-us h4::after {
+.contact-us h4::after,
+.our-team h4::after,
+main h4::after {
   content: "";
   width: 70px;
   height: 2px;
   position: absolute;
   top: 50%;
-  left: 56%;
+  left: calc(-70px - 10px);
   transform: translateY(-50%);
   border-radius: 15px;
   background-image: linear-gradient(
@@ -415,13 +406,15 @@ main h4::before,
   );
 }
 .what-we-do h4::before,
-.contact-us h4::before {
+.contact-us h4::before,
+.our-team h4::before,
+main h4::before {
   content: "";
   width: 70px;
   height: 2px;
   position: absolute;
   top: 50%;
-  right: 56%;
+  right: calc(-70px - 10px);
   transform: translateY(-50%);
   border-radius: 15px;
   background-image: linear-gradient(
@@ -463,12 +456,13 @@ main h4::before,
   );
   opacity: 0;
   overflow: hidden;
+  transition: top 0.5s ease-in-out, left 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
 }
 .what-we-do .row .inner:hover::after {
   top: 10%;
   left: 10%;
   opacity: 1;
-  transition: all 0.5s;
 }
 .what-we-do .row .inner::before {
   content: "";
@@ -484,12 +478,13 @@ main h4::before,
   );
   opacity: 0;
   overflow: hidden;
+  transition: bottom 0.5s ease-in-out, right 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
 }
 .what-we-do .row .inner:hover::before {
   bottom: 10%;
   right: 10%;
   opacity: 1;
-  transition: all 0.5s;
 }
 .what-we-do .row .card-img img {
   border-radius: 15px;
@@ -501,7 +496,8 @@ main h4::before,
 .what-we-do .row .inner,
 .what-we-do .row .card-img img {
   height: 290px;
-  border: 1px solid var(--second-color);
+  border: 2px solid var(--second-color);
+  transition: border-color 0.2s ease-in-out;
 }
 .what-we-do-icon,
 h3 {
@@ -518,7 +514,7 @@ h3 {
   color: var(--fifth-color);
 }
 .what-we-do .row .inner:hover {
-  border: 2px solid var(--main-color);
+  border-color: var(--main-color);
 }
 /* @media screen and(max-width:500px) {
   .vsm-size {
@@ -705,10 +701,7 @@ input::placeholder,
 textarea::placeholder {
   color: var(--text-color);
 }
-select:focus {
-  color: #12e072;
-  background-color: var(--main-color);
-}
+
 select:optional {
   color: white;
 }
@@ -816,8 +809,9 @@ footer .tournaments-text p {
   100% {
     transform: translateX(-1500%);
   }
-}.line {
-  width: 80%;
+}
+.line {
+  width: 30%;
   margin: auto;
   margin-block: 50px;
   height: 4px;
@@ -868,35 +862,71 @@ footer .tournaments-text p {
 }
 .items {
   margin-block: 10px;
-  width: 100px;
+  width: 100%;
   height: 100px;
   display: flex;
   position: absolute;
   top: 0;
-  left: 100%;
-  animation: scrollleft 50s infinite linear;
-  animation-delay: -10s;
+  left: 0;
+  animation: scrollleft 25s infinite linear;
 }
 @keyframes scrollleft {
   100% {
-    left: -100%;
+    left: -50%;
   }
 }
-.cross-items
-{
+.cross-items {
   margin-block: 10px;
-  width: 100px;
+  width: 100%;
   height: 100px;
   display: flex;
   position: absolute;
   top: 0;
-  left:-100%;
-animation: scrollright 50s infinite linear;
-margin-top: 150px;
+  left: 0;
+  animation: scrollright 25s infinite linear reverse;
+  margin-top: 150px;
 }
 @keyframes scrollright {
   100% {
-    left: 100%;
+    left: -50%;
   }
 }
 /* =========== animation end ================ */
+
+/* [FIX] anchor Home of NavBar */
+
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--main-color);
+}
+
+/* Fix Form Inputs on Focus */
+.contact-us-right-side .first-second-lable input,
+.input-border {
+  border-color: var(--second-color);
+  padding-left: 0.9rem;
+}
+.contact-us-right-side .first-second-lable input:focus,
+.input-border:focus {
+  outline: 2px solid var(--main-color);
+}
+
+/* [Fix] Footer Links */
+.support-section ul li,
+.tournaments-text ul li {
+  padding-bottom: 0.5rem;
+}
+.support-section ul li a,
+.tournaments-text ul li a,
+.footer-terms li a {
+  color: var(--text-color);
+  display: flex;
+
+  align-items: center;
+}
+
+.support-section ul li:hover a,
+.tournaments-text ul li:hover a,
+.footer-terms li a:hover {
+  color: var(--main-hover-color);
+}
